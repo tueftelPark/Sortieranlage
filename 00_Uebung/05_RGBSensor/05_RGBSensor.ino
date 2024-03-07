@@ -12,7 +12,7 @@ Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS3472
 // Setup wird einmal beim Start ausgeführt
 void setup() {
 
-  Serial.begin(9600); // öffnet den serial port für die Kommunikation zum PC, Datenrate wird auf 9600 bps eingestellt
+  Serial.begin(9600); 
  
   // Überprüfen, ob Color Sensor sich auch zurückmeldet
   if (tcs.begin()){
@@ -25,18 +25,6 @@ void setup() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Loop wird dauernd von oben nach unten durchgegangen
 void loop() {
@@ -78,7 +66,9 @@ void loop() {
     Serial.println("\nNICHT ERKANNT"); 
   }
 
-
+//TODO: Lade den Code auf den Arduino Nano. Öffne den Serial Monitor (oben rechts Symbol mit Lupe) und schaue ob die Farben richtig erkannt werden
+// Du kannst von Hand den Servo drehen und die Kugeln aufladen und dann über den Sensor fahren von Hand  
+// TEST: Falls die Farbzuteilung falsch ist, überlege welcher Wert nicht stimmt. Bei Unklarheiten melde dich beim Coach.  
   }
 
 
