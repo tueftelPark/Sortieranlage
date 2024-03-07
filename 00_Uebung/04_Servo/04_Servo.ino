@@ -12,14 +12,14 @@ analogWrite(PIN, 0 bis 255); <- neben digital gibt es auch analoge Signale. Hier
 
 #include <Servo.h> //Die Servobibliothek wird aufgerufen. Sie wird benötigt, damit die Ansteuerung des Servos vereinfacht wird.
  
-Servo servoXYZ; //Erstellt für das Programm ein Servo mit dem Namen „servoXYZ“
+Servo SERVONAME; //Erstellt für das Programm ein Servo mit dem Namen „SERVONAME“
 //TODO: Erstelle noch einen zweiten Servo
 
 
 void setup()
 {
 //TODO: Finde heraus an welchem PIN der Servo angeschlossen ist (orange Kabel). Ändere anschliessend das X in die Zahl um.
-servoXYZ.attach(X); //mit dem XXX.attach müssen wir definieren, wo der Servo angeschlossen ist. (XXX=Servoname)
+SERVONAME.attach(X); //mit dem XXX.attach müssen wir definieren, wo der Servo angeschlossen ist. (XXX=Servoname)
 //TODO: Definiere hier noch deinen zweiten Servo
 
  
@@ -27,7 +27,7 @@ servoXYZ.attach(X); //mit dem XXX.attach müssen wir definieren, wo der Servo an
 
 void loop()
 {
-servoXYZ.write(0); //Position 1 ansteuern mit dem Winkel 0° // TEST: Steuere andere Winkel an.
+SERVONAME.write(0); //Position 1 ansteuern mit dem Winkel 0° // TEST: Steuere andere Winkel an.
 delay(1000); //Das Programm stoppt für XX Sekunden //TEST: Ändere das Delay - was passiert?
 
 //TODO: Fahre mit dem Servo noch weitere Positionen an
