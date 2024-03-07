@@ -5,7 +5,7 @@
 
 
 // Servo-Objekt initialisieren und Variabeln definieren
-Servo myservo;                  // Servo Rutsche
+Servo bottomservo;                  // Servo Rutsche
 Servo topservo;                 // Servo Löffel
 uint16_t red, green, blue, clear;
 
@@ -14,20 +14,7 @@ uint16_t red, green, blue, clear;
 Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_1X);
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ~███    █▄     ▄████████ ▀█████████▄  ███    █▄  ███▄▄▄▄      ▄██████▄ ~ */
-/* ~███    ███   ███    ███   ███    ███ ███    ███ ███▀▀▀██▄   ███    ███~ */
-/* ~███    ███   ███    █▀    ███    ███ ███    ███ ███   ███   ███    █▀ ~ */
-/* ~███    ███  ▄███▄▄▄      ▄███▄▄▄██▀  ███    ███ ███   ███  ▄███       ~ */
-/* ~███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀██▄  ███    ███ ███   ███ ▀▀███ ████▄ ~ */
-/* ~███    ███   ███    █▄    ███    ██▄ ███    ███ ███   ███   ███    ███~ */
-/* ~███    ███   ███    ███   ███    ███ ███    ███ ███   ███   ███    ███~ */
-/* ~████████▀    ██████████ ▄█████████▀  ████████▀   ▀█   █▀    ████████▀ ~ */
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-// Ändere die Positionen so, dass der untere Servo an die richtige Stelle fährt um die Kugeln abzuladen.
-
+//TODO: Ändere die Positionen so, dass der untere Servo an die richtige Stelle fährt um die Kugeln abzuladen.
 
 const int PosSchwarz = ?;
 const int PosBlau = ?;
@@ -36,23 +23,12 @@ const int PosRot = ?;
 const int PosWeiss = ?;
 const int PosLeer = ?;
 
-
-// Ändere die Positionen so, dass der obere Servo an die richtige Stelle fährt um die Kugeln abzuholen und freizugeben.
+//TODO: Ändere die Positionen so, dass der obere Servo an die richtige Stelle fährt um die Kugeln abzuholen und freizugeben.
 
 const int PosLager = ?;
 const int PosSensor = ?;
 const int PosRutsche = ?;
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ~███    █▄     ▄████████ ▀█████████▄  ███    █▄  ███▄▄▄▄      ▄██████▄          ▄████████ ███▄▄▄▄   ████████▄     ▄████████~ */
-/* ~███    ███   ███    ███   ███    ███ ███    ███ ███▀▀▀██▄   ███    ███        ███    ███ ███▀▀▀██▄ ███   ▀███   ███    ███~ */
-/* ~███    ███   ███    █▀    ███    ███ ███    ███ ███   ███   ███    █▀         ███    █▀  ███   ███ ███    ███   ███    █▀ ~ */
-/* ~███    ███  ▄███▄▄▄      ▄███▄▄▄██▀  ███    ███ ███   ███  ▄███              ▄███▄▄▄     ███   ███ ███    ███  ▄███▄▄▄    ~ */
-/* ~███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀██▄  ███    ███ ███   ███ ▀▀███ ████▄       ▀▀███▀▀▀     ███   ███ ███    ███ ▀▀███▀▀▀    ~ */
-/* ~███    ███   ███    █▄    ███    ██▄ ███    ███ ███   ███   ███    ███        ███    █▄  ███   ███ ███    ███   ███    █▄ ~ */
-/* ~███    ███   ███    ███   ███    ███ ███    ███ ███   ███   ███    ███        ███    ███ ███   ███ ███   ▄███   ███    ███~ */
-/* ~████████▀    ██████████ ▄█████████▀  ████████▀   ▀█   █▀    ████████▀         ██████████  ▀█   █▀  ████████▀    ██████████~ */
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 // Setup wird einmal beim Start ausgeführt
@@ -70,22 +46,18 @@ void setup() {
     while (1); // Halt!
     }
 
-  // Servos Pin definieren
-  myservo.attach(3);
-  topservo.attach(9);
+// TODO: Servo Pins definieren (organge Kabel)
+  bottomservo.attach(?); 
+  topservo.attach(?);
   
 
+  
   // Servos in Grundstellung fahren
-  myservo.write(90);
+  bottomservo.write(90);
   topservo.write(180);
   delay(2000);
   
 }
-
-
-
-
-
 
 
 
@@ -117,32 +89,32 @@ void loop() {
 
   if (( (int(clear) < 40))) {
     Serial.println("\nSchwarz");
-    myservo.write(PosSchwarz);
+    bottomservo.write(PosSchwarz);
   }
 
   else if ((int(clear) > int(red)) && (int(clear) > int(green)) && (int(clear) > int(blue)) && (int(clear) > 200)) {
     Serial.println("\nWeiss");
-    myservo.write(PosWeiss);
+    bottomservo.write(PosWeiss);
   }
 
   else if ((int(red) > int(green)) && (int(red) > int(blue) && !(int(clear) > 100))) {
     Serial.println("\nRot");
-    myservo.write(PosRot);
+    bottomservo.write(PosRot);
   }
 
   else if ((int(green) > int(red)) && (int(green) > int(blue) && !(int(clear) > 100))) {
     Serial.println("\nGrün");
-    myservo.write(PosGruen);
+    bottomservo.write(PosGruen);
   }
 
   else if ((int(blue) > int(red)) && (int(blue) > int(green) && !(int(clear) > 100))) {
     Serial.println("\nBlau");
-    myservo.write(PosBlau);
+    bottomservo.write(PosBlau);
   }
 
   else {
     Serial.println("\nNICHT ERKANNT"); 
-    myservo.write(PosLeer);
+    bottomservo.write(PosLeer);
   }
 
   delay(1000);
