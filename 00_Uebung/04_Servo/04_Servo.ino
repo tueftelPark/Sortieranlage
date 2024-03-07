@@ -21,9 +21,9 @@ servoXYZ.attach(8); //mit dem XXX.attach müssen wir definieren, wo der Servo an
 
 void loop()
 {
-servoXYZ.write(0); //Position 1 ansteuern mit dem Winkel 0°
-delay(1000); //Das Programm stoppt für XX Sekunden 
+servoXYZ.write(0); //Position 1 ansteuern mit dem Winkel 0° // TEST: Steuere andere Winkel an.
+delay(1000); //Das Programm stoppt für XX Sekunden //TEST: Ändere das Delay - was passiert?
 
-// Fahre mit dem Servo noch weitere Positionen an
+// TODO: Fahre mit dem Servo noch weitere Positionen an
  
 }
