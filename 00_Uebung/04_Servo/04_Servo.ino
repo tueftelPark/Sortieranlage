@@ -18,7 +18,7 @@ Servo servoXYZ; //Erstellt für das Programm ein Servo mit dem Namen „servoXYZ
 
 void setup()
 {
-//TODO: Finde heraus an welchem PIN der Servo angeschlossen ist. Ändere anschliessend das X in die Zahl um.
+//TODO: Finde heraus an welchem PIN der Servo angeschlossen ist (orange Kabel). Ändere anschliessend das X in die Zahl um.
 servoXYZ.attach(X); //mit dem XXX.attach müssen wir definieren, wo der Servo angeschlossen ist. (XXX=Servoname)
 //TODO: Definiere hier noch deinen zweiten Servo
 
