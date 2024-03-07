@@ -13,10 +13,16 @@ analogWrite(PIN, 0 bis 255); <- neben digital gibt es auch analoge Signale. Hier
 #include <Servo.h> //Die Servobibliothek wird aufgerufen. Sie wird benötigt, damit die Ansteuerung des Servos vereinfacht wird.
  
 Servo servoXYZ; //Erstellt für das Programm ein Servo mit dem Namen „servoXYZ“
+//TODO: Erstelle noch einen zweiten Servo
+
 
 void setup()
 {
-servoXYZ.attach(8); //mit dem XXX.attach müssen wir definieren, wo der Servo angeschlossen ist. (XXX=Servoname)
+//TODO: Finde heraus an welchem PIN der Servo angeschlossen ist. Ändere anschliessend das X in die Zahl um.
+servoXYZ.attach(X); //mit dem XXX.attach müssen wir definieren, wo der Servo angeschlossen ist. (XXX=Servoname)
+//TODO: Definiere hier noch deinen zweiten Servo
+
+ 
 }
 
 void loop()
@@ -24,6 +30,13 @@ void loop()
 servoXYZ.write(0); //Position 1 ansteuern mit dem Winkel 0° // TEST: Steuere andere Winkel an.
 delay(1000); //Das Programm stoppt für XX Sekunden //TEST: Ändere das Delay - was passiert?
 
-// TODO: Fahre mit dem Servo noch weitere Positionen an
+//TODO: Fahre mit dem Servo noch weitere Positionen an
+ 
+//TODO: Welcher Servo ist oben und welcher unten?
+
+//TODO: Servo oben: Finde die 3 Positonen, Kugel holen, Sensor, Kugel abladen (notiere diese auf einem Blatt)
+
+//TODO: Servo unten: Finde die 5 Positionen für die verschiedenen Farben (notiere diese auf einem Blatt)
+ 
  
 }
