@@ -17,8 +17,8 @@ void loop() { //Der Loop-Bereich wird immer wiederholt solange das Arduino läuf
 
   Serial.println(sound); //print the value of sound sensor
  
- //TODO: Öffne den Serial Monitor (oben rechts die Lupe) und schaue welche Werte der Sound hat wenn du nichts machst und wenn du klatschst. Wähle XX so, dass der Buzzer nur bei Klatschen abgeht.
- if (sound > XX) { //wenn der Sound-Wert grösser ist als XX, dann mache....
+ //TODO: Öffne den Serial Monitor (oben rechts die Lupe) und schaue welche Werte der Sound hat wenn du nichts machst und wenn du klatschst. Ersetze 3000 mit einem passenden Wert, so dass der Buzzer nur bei Klatschen abgeht.
+ if (sound > 3000) { //wenn der Sound-Wert grösser ist als 3000, dann mache....
 
  //TEST:Ändere die Zahl hinter BUZZER und schaue was passiert
   tone(BUZZER, 250); //Buzzer einschalten und Ton abspielen
