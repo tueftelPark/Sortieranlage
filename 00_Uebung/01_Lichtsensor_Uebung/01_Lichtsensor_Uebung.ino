@@ -1,6 +1,6 @@
 
 //TODO: Welche PIN Nummer hat die LED -> schaue dazu auf dem Sensor-Kit und ersetze unten das X mit der Nummer (ohne das D)
-int LED = X; //Hier speichern wir eine Zahl (der PINvon unserer LED) auf das Wort LED
+int LED = X; //Hier speichern wir eine Zahl (der PIN von unserer LED) auf das Wort LED (LED ist die Variabel)
 
 void setup() { //Das Setup wird nur einmal ausgeführt -> Beim Start des Arduinos
 Serial.begin(9600); //Starte die Kommunikation mit dem Serial Monitor
@@ -9,7 +9,7 @@ pinMode(LED,OUTPUT);  //Definiere die LED (PIN X) als OUTPUT (OUTPUT = Arduino g
 }
  
 void loop() { //Der Loop-Bereich wird immer wiederholt solange das Arduino läuft
-  //TODO: Welche PIN Nummer hat der Licht-Sensor -> schaue dazu auf dem Sensor-Kit und ersetze unten das X mit der Nummer (inklusive das A)
+  //TODO: Welche PIN Nummer hat der Lichtsensor -> schaue dazu auf dem Sensor-Kit und ersetze unten das X mit der Nummer (inklusive das A)
   int licht = analogRead(AX); // lese die Werte aus dem Lichtsensor und speichere diese auf der Variable (Wort) Licht ab.
  
  //TODO: Du kannst jetzt oben dein Arduino auswählen und mit dem Pfeil-Symbol den Code auf das Arduino hochladen (Du musst hier nichts schreiben)

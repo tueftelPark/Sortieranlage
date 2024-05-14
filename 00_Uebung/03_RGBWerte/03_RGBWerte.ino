@@ -34,7 +34,7 @@ int color = 0;
 const int PosLager = 180;
 const int PosSensor = 90;
 const int PosRutsche = 0;
-const int wartezeit = 500;
+const int wartezeit = 5000;
 
 void setup() {  // setup() wird einmal beim Start des Arduino ausgeführt
 

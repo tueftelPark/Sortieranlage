@@ -10,10 +10,10 @@ pinMode(BUZZER,OUTPUT);  //Definiert den Buzzer (PIN X) als OUTPUT (OUTPUT = Ard
 }
  
 void loop() { //Der Loop-Bereich wird immer wiederholt solange das Arduino läuft
-  //TODO: Welche PIN Nummer hat der Licht-Sensor -> schaue dazu auf dem Sensor-Kit und ersetze unten das X mit der Nummer (inklusive das A)
-  int sound = analogRead(AX); // lese die Werte aus dem Lichtsensor und speichere diese auf der Variable (Wort) Licht ab.
+  //TODO: Welche PIN Nummer hat der Geräuschsensor -> schaue dazu auf dem Sensor-Kit und ersetze unten das X mit der Nummer (inklusive das A)
+  int sound = analogRead(AX); // lese die Werte aus dem Geräuschsensor und speichere diese auf der Variable (Wort) Licht ab.
  
- //TODO: Du kannst jetzt oben dein Arduino auswählen und mit dem Pfeil-Symbol den Code auf das Arduino hochladen (Du musst hier nichts schreiben)
+ //TODO: Du kannst jetzt oben dein Arduino auswählen und mit dem Pfeil-Symbol (upload) den Code auf das Arduino hochladen (Du musst hier nichts schreiben)
 
   Serial.println(sound); //print the value of sound sensor
  
