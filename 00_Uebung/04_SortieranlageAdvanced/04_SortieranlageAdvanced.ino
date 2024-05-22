@@ -87,26 +87,37 @@ nach dem Buchstaben kommt jeweils ein kleiner als < oder ein grösser als >.
   // Versuch der Farbfeststellung anhand der r,g,b-Werte.
   // Am besten mit Rot, Grün, Blau anfangen die die Schwellenwerte
   // mit der seriellen Ausgabe entsprechend anpassen
-
-    if ((r > X) && (g < X) && (b < X)) {
+  if ((clearcol > X) && (r > X) && (g > X) && (b > X)) {
+    Serial.println("\tWeiss");
+    bottomServo.write(20);
+    delay(wartezeit);
+    topServo.write(PosRutsche);  
+    delay(wartezeit);
+  } else if ((clearcol < X) && (r > X) && (g < X) && (b < X)) {
     Serial.println("\tRot");
     bottomServo.write(50);
     delay(wartezeit);
     topServo.write(PosRutsche);  
     delay(wartezeit);
-  } else if ((r < X) && (g > X) && (b < X)) {
+  } else if ((clearcol < X) && (r < X) && (g > X) && (b < X)) {
     Serial.println("\tGrün");
     bottomServo.write(80);
     delay(wartezeit);
     topServo.write(PosRutsche);  
     delay(wartezeit);
-  } else if ((r > X) && (g > X) && (b > X)) {
+  } else if ((clearcol < X) && (r > X) && (g > X) && (b > X)) {
     Serial.println("\tBlau");
     bottomServo.write(115);
     delay(wartezeit);
     topServo.write(PosRutsche);  
     delay(wartezeit);
-
+  } else if ((clearcol < X) && (r < X) && (g < X) && (b < X)) {
+    Serial.print("\tSchwarz");
+    bottomServo.write(150);
+    delay(wartezeit);
+    topServo.write(PosRutsche);  
+    delay(wartezeit);
+  }
   // Wenn keine Regel greift
   else {
     Serial.println("\tNICHT ERKANNT");
