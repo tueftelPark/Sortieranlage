@@ -106,7 +106,7 @@ nach dem Buchstaben kommt jeweils ein kleiner als < oder ein grösser als >.
     delay(wartezeit);
     topServo.write(PosRutsche);  
     delay(wartezeit);
-
+  }
   // Wenn keine Regel greift
   else {
     Serial.println("\tNICHT ERKANNT");
