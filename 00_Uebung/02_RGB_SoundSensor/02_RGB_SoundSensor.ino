@@ -50,7 +50,7 @@ void loop() { //Der Loop-Bereich wird immer wiederholt solange das Arduino läuf
   Serial.println(sound); //print the value of sound sensor
 
 // TODO: Öffne den Serial Monitor (oben rechts die Lupe) und schaue welche Werte der Sound hat 
-// -> Versuche den Code unten anzupassen, damit du mit schnipsen, reden und klatschen die verschiedenen Farben zum leuchten bringst
+// -> Versuche den Code unten so anzupassen, damit du mit verschiedenen Lautstärken die verschiedenen Farben zum leuchten bringst
 
   if (sound < 100) { //wenn der Sound-Wert kleiner als 100 ist, dann mache...
     analogWrite(LEDrot, RotAn); //Schalte die rote LED an
@@ -70,4 +70,5 @@ void loop() { //Der Loop-Bereich wird immer wiederholt solange das Arduino läuf
     analogeWrite(LEDblau, BlauAus);
   }
   
+//z.B.: Schnipsen -> Rot LED; Reden -> Grün LED; Klatschen -> Blaue LED
 }
