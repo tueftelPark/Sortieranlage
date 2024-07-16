@@ -17,6 +17,7 @@ int LEDrot = XX;
 int LEDgruen = XX; 
 // TODO: Farbe blau an Pin XX -> Wichtig nur PWM(~) nutzen! 
 
+
 int RotAn = 255; //TEST: Variable für das Einschalten
 int GruenAn = 255; //TEST: Variable für das Einschalten
 int BlauAn = 255; //TEST: Variable für das Einschalten
@@ -36,6 +37,7 @@ pinMode(LEDrot, YY);
 pinMode(XX, YY);
 //TODO: Definiere den richtigen Pin für die blaue LED als Ausgang.
 
+
 Serial.begin(9600); //Starte die Kommunikation mit dem Serial Monitor
 
 }
@@ -50,25 +52,27 @@ void loop() { //Der Loop-Bereich wird immer wiederholt solange das Arduino läuf
   Serial.println(sound); //print the value of sound sensor
 
 // TODO: Öffne den Serial Monitor (oben rechts die Lupe) und schaue welche Werte der Sound hat 
-// -> Versuche den Code unten so anzupassen, damit du mit verschiedenen Lautstärken die verschiedenen Farben zum leuchten bringst
+// -> Versuche den Code unten anzupassen, damit du mit schnipsen, reden und klatschen die verschiedenen Farben zum leuchten bringst
 
-  if (sound < 100) { //wenn der Sound-Wert kleiner als 100 ist, dann mache...
+  if (sound < 1000) { //wenn der Sound-Wert kleiner als 100 ist, dann mache...
+    Serial.println(sound);
     analogWrite(LEDrot, RotAn); //Schalte die rote LED an
     delay(1000); //LED leuchtet für 1 Sekunde
-    analogeWrite(LEDrot, RotAus); //schaltet die rote LED wieder aus
+    analogWrite(LEDrot, RotAus); //schaltet die rote LED wieder aus
   }
 
-  else if (sound < 500) { //wenn der Sound-Wert kleiner als 500 ist, dann mache...
-    analogeWrite(LEDgruen, GruenAn); //Schalte die grüne LED an
+  else if (sound < 5000) { //wenn der Sound-Wert kleiner als 500 ist, dann mache...
+    Serial.println(sound);
+    analogWrite(LEDgruen, GruenAn); //Schalte die grüne LED an
     delay(1000);
-    analogeWrite(LEDgruen, GruenAus);
+    analogWrite(LEDgruen, GruenAus);
   }
 
   else { //falls das if nicht zutrifft, dann mache...
-    analogeWrite(LEDblau, BlauAn); //Schalte die blaue LED an
+    Serial.println(sound);
+    analogWrite(LEDblau, BlauAn); //Schalte die blaue LED an
     delay(1000);
-    analogeWrite(LEDblau, BlauAus);
+    analogWrite(LEDblau, BlauAus);
   }
   
-//z.B.: Schnipsen -> Rot LED; Reden -> Grün LED; Klatschen -> Blaue LED
 }
